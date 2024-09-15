@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+Task Manager App
+A simple React TypeScript task management application that allows users to add, edit, delete, and filter tasks. The app uses Redux Toolkit to manage the state, including operations for task management.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Add new tasks
+Edit existing tasks
+Delete tasks
+Mark tasks as completed
+Filter tasks by their completion status
+Persist tasks using local storage
 
-Currently, two official plugins are available:
+Tech Stack
+React with TypeScript (tsx)
+Redux Toolkit for state management
+Tailwind CSS for styling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Folder Structure
+/src/components - Reusable components (e.g., TaskItem, TaskFilter)
+/src/pages - Contains the main task management pages (e.g., AddTask, ListTask)
+/src/store - Redux Toolkit slices and reducers
 
-## Expanding the ESLint configuration
+Redux Overview
+Slices
+A slice in Redux Toolkit represents a part of the global state and contains the logic for state transitions. In this app, we have a tasksSlice which holds the state of tasks, and manages actions like adding, editing, and deleting tasks.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Reducers
+A reducer is a pure function that takes the current state and an action as inputs and returns a new state. Each slice has its own reducer, which handles specific actions (e.g., addTask, deleteTask) to update the task list. Redux Toolkit simplifies this with built-in methods to define reducers.
