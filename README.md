@@ -1,4 +1,5 @@
-Task Manager App
+Task Manager App With Redux
+
 A simple React TypeScript task management application that allows users to add, edit, delete, and filter tasks. The app uses Redux Toolkit to manage the state, including operations for task management.
 
 Features
